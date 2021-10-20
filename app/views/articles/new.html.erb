@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light bg-light border" role="navigation">
+  <div class="container-fluid">    
+    <div class="navbar-header">      
+      <a class="navbar-brand" href="/articles">Wikinimous</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/articles/new" class="text-reset">New Article</a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class= "container">
+     <h1><strong>New Article</strong></h1>
+    <%= form_for(@article) do |f| %>
+        <%= f.label :title, "Ingresar titulo", class:"font-weight-bold mt-3"%>
+        <%= f.text_field :title, class:"form-control" %>
+        <%= f.label :content, "Ingresar contenido", class:"font-weight-bold mt-3"%>
+        <%= f.text_field :content, class:"form-control" %>
+        <%= f.submit class:"btn btn-primary mt-3" %>
+    <% end %>
+    <hr>
+    <%= link_to 'Back to index', articles_path %>
+</div>

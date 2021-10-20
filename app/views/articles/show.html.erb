@@ -1,0 +1,24 @@
+<nav class="navbar navbar-light bg-light border" role="navigation">
+  <div class="container-fluid">    
+    <div class="navbar-header">      
+      <a class="navbar-brand" href="/articles">Wikinimous</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/articles/new" class="text-reset">New Article</a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class = "container">
+    <div class = "d-flex justify-content-between">
+        <h1> <%= @article.title%></h1>
+        <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-sm" %>
+        <%= link_to "Delete", article_path, method: :delete, data: {confirm: "Estas seguro?"}, class:"ml-3" %>
+    </div>
+    <p class = "border"><%= @article.content%></p>    
+    <%= link_to "Back to index", articles_path %>
+</div>
